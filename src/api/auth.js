@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.NEXT_PUBLIC_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const registerUser = async (payload) => {
   const res = await fetch(`${API_URL}/register`, {
