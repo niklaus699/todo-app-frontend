@@ -228,13 +228,6 @@ const App = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            {/* Logout button */}
-            <button
-              onClick={logout}
-              className="text-white text-sm font-semibold opacity-75 hover:opacity-100 transition-opacity"
-            >
-              Logout
-            </button>
             <div className="cursor-pointer" onClick={toggleTheme}>
               {theme === "light" ? (
                 <MoonIcon className="w-6 h-6 cursor-pointer text-white" />
@@ -330,10 +323,17 @@ const App = () => {
             })}
           </div>
         )}
-        <div className="py-6">
-          <p className="text-sm font-sans font-semibold text-[var(--color-secondary)]  hover:text-[var(--color-primary)] ">
+        
+        <div className="w-full max-w-md md:max-w-xl flex flex-col sm:flex-row sm:justify-between items-center py-6 gap-3">
+          <p className="text-sm font-sans font-semibold text-[var(--color-secondary)] hover:text-[var(--color-primary)]">
             Drag and drop to reorder list
           </p>
+          <button
+            onClick={logout}
+            className="w-full sm:w-auto text-center text-[var(--color-primary)] text-sm font-semibold opacity-75 hover:opacity-100 transition-opacity border border-white/30 rounded-md px-4 py-2"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>
