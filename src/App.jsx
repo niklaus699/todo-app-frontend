@@ -223,7 +223,7 @@ const App = () => {
             <span className="text-gray-50 text-3xl tracking-[0.4em] font-semibold">
               TODO
             </span>
-            <span className="text-white text-sm font-medium tracking-wide mt-1">
+            <span className="text-white opacity-75 text-sm font-medium tracking-wide mt-1">
               Welcome, {user.username} 👋
             </span>
           </div>
