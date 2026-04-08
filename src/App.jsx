@@ -219,9 +219,14 @@ const App = () => {
         }}
       >
         <div className="flex justify-between w-full max-w-md items-center md:max-w-xl">
-          <span className="text-gray-50 text-3xl tracking-[0.4em] font-semibold">
-            TODO
-          </span>
+          <div className="flex flex-col">
+            <span className="text-gray-50 text-3xl tracking-[0.4em] font-semibold">
+              TODO
+            </span>
+            <span className="text-gray-200 text-sm font-medium tracking-wide mt-1">
+              Welcome, {user.username} 👋
+            </span>
+          </div>
           <div className="flex items-center gap-4">
             {/* Logout button */}
             <button

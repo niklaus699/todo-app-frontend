@@ -14,13 +14,13 @@ const getAuthHeaders = () => {
 
 
 export const fetchTodos = async (logout) => {
-  const res = await fetchWithAuth(`${API_URL}/todos`, {}, logout);
+  const res = await fetchWithAuth(`${API_URL}api/todos`, {}, logout);
   return res.json();
 };
 
 export const createTodo = async (text, logout) => {
   const res = await fetchWithAuth(
-    `${API_URL}/todos`,
+    `${API_URL}api/todos`,
     {
       method: "POST",
       body: JSON.stringify({ text }),
@@ -30,7 +30,7 @@ export const createTodo = async (text, logout) => {
   return res.json();
 };
 export const toggleTodo = async (id) => {
-  const res = await fetch(`${API_URL}/todos/${id}`, {
+  const res = await fetch(`${API_URL}api/todos/${id}`, {
     method : "PUT",
     headers : getAuthHeaders(),
   });
@@ -39,11 +39,11 @@ export const toggleTodo = async (id) => {
 };
 
 export const deleteTodo = async (id, logout) => {
-  await fetchWithAuth(`${API_URL}/todos/${id}`, { method: "DELETE" }, logout);
+  await fetchWithAuth(`${API_URL}api/todos/${id}`, { method: "DELETE" }, logout);
 };
 
 export const reorderTodos = async (list) => {
-    const res = await fetch(`${API_URL}/todos/reorder`, {
+    const res = await fetch(`${API_URL}api/todos/reorder`, {
       method: "PUT",
       headers: getAuthHeaders(),
       body: JSON.stringify({
