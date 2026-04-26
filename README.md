@@ -1,16 +1,45 @@
-# React + Vite
+# 🚀 Real-Time Full-Stack Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A feature-rich, high-performance task management application built using **React** and **Node.js**. This project demonstrates a complete full-stack workflow, featuring real-time data synchronization, intuitive UX through drag-and-drop, and a polished, responsive UI.
 
-Currently, two official plugins are available:
+## 🌟 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Real-Time Sync:** Integrated **WebSockets** to ensure that any change made in one browser tab (adding, deleting, or moving a task) is instantly reflected across all other open instances without a page refresh.
+* **Drag & Drop Interface:** Smooth, interactive task reordering for a modern user experience.
+* **Theming:** A comprehensive **Light/Dark mode** toggle that persists across sessions.
+* **Smart Form Validation:** Robust client-side validation to prevent invalid entries and ensure data consistency.
+* **Cross-Tab Communication:** Backend-driven updates that keep the state in sync globally.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+**Frontend:**
+* **React.js:** Component-based UI architecture.
+* **JavaScript (ES6+):** Logic and state management.
+* *Tailwind Styled Components:** For the light/dark theme implementation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Backend:**
+* **Node.js & Express:** Scalable server-side API.
+* **WebSockets (Socket.io):** Enabling bi-directional real-time communication.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Node.js (v14+)
+* npm or yarn
+
+
+## 📝 Implementation Details
+
+* **Form Validation:** Implemented custom logic to handle empty states and character limits, providing immediate feedback to the user.
+* **WebSockets:** Instead of traditional polling, the backend emits events on every mutation, which the React frontend listens for to update its local state dynamically.
+* **Theme Toggle:** Utilized CSS variables to manage color palettes, allowing for seamless switching between light and dark modes.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
