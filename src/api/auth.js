@@ -20,6 +20,8 @@ export const loginUser = async (payload) => {
     body: JSON.stringify(payload),
   });
 
-  if (!res.ok) throw new Error("Login failed");
-  return res.json();
+  const data = await res.json();
+
+  if (!res.ok) throw new Error(data.message || "Login failed");
+  return data;
 };

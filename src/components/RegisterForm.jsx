@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { registerUser } from "../api/auth";
+import { useAuth } from "@/context/useAuth";
 import ErrorMessage from "./ErrorMessage";
 
 
 const RegisterForm = ({ onSuccess }) => {
+  const { login } = useAuth();
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,10 +15,11 @@ const RegisterForm = ({ onSuccess }) => {
     e.preventDefault();
     setError(null);
     try {
-      // ✅ Fix: include username in the payload
       const data = await registerUser({ username: userName, email, password });
+      // Sync AuthContext state so the app recognises the user immediately
+      login(data);
       localStorage.setItem("token", data.token);
-      onSuccess();
+      if (typeof onSuccess === "function") onSuccess();
     } catch (err) {
       setError(err.message);
     }

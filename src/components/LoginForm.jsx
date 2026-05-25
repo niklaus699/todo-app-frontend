@@ -17,7 +17,7 @@ const LoginForm = ({ onSuccess }) => {
       const data = await loginUser({ email, password });
       login(data);
       localStorage.setItem("token", data.token);
-      onSuccess();
+      if (typeof onSuccess === "function") onSuccess();
     } catch (err) {
         setError(err.message);
     }
